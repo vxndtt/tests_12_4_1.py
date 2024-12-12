@@ -1,6 +1,6 @@
 import logging
 import unittest
-import runner_and_tournament
+import rt_with_exceptions
 
 
 logging.basicConfig(level=logging.INFO, filemode='w', filename='runner_tests.log', encoding='UTF-8',
@@ -13,7 +13,7 @@ class RunnerTest(unittest.TestCase):
     @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_walk(self):
         try:
-            runner = runner_and_tournament.Runner('Sasha', -5)
+            runner = rt_with_exceptions.Runner('Sasha', -5)
             for i in range(10):
                 runner.walk()
             self.assertEqual(runner.distance, 50)
@@ -25,7 +25,7 @@ class RunnerTest(unittest.TestCase):
     @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_run(self):
         try:
-            runner = runner_and_tournament.Runner(5)
+            runner = rt_with_exceptions.Runner(5)
             for i in range(10):
                 runner.run()
             self.assertEqual(runner.distance, 100)
@@ -36,8 +36,8 @@ class RunnerTest(unittest.TestCase):
 
     @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_challenge(self):
-        runner1 = runner_and_tournament.Runner('Katya')
-        runner2 = runner_and_tournament.Runner('Igor')
+        runner1 = rt_with_exceptions.Runner('Katya')
+        runner2 = rt_with_exceptions.Runner('Igor')
         for i in range(10):
             runner1.walk()
             runner2.run()
