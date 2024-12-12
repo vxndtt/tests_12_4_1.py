@@ -2,9 +2,9 @@ import logging
 import unittest
 import runner_and_tournament
 
-if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO, filemode='w', filename='runner_tests.log', encoding='UTF-8',
-                        format='%(asctime)s | %(levelname)s | %(message)s')
+
+logging.basicConfig(level=logging.INFO, filemode='w', filename='runner_tests.log', encoding='UTF-8',
+                    format='%(asctime)s | %(levelname)s | %(message)s')
 
 class RunnerTest(unittest.TestCase):
 
@@ -45,7 +45,3 @@ class RunnerTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO, filemode='w', filename='runner_tests.log', encoding='UTF-8',
-                        format='%(asctime)s | %(levelname)s | %(message)s')
